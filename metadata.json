@@ -1,0 +1,8 @@
+{
+  "name": "Remix Felline in B\u0026B — Dimora di Charme nel Salento",
+  "description": "Dimora storica di charme nel cuore del borgo medievale di Felline, a dieci minuti dal Mar Ionio. Architettura in pietra leccese, giardino di cactus monumentali e l\u0027ospitalità autentica di Antonio e Nadia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

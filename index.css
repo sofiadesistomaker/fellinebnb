@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-obsidian: #0B0A09;
+  --color-obsidian-elevated: #151311;
+  --color-limestone: #F4F1EC;
+  --color-limestone-muted: #EAE4DA;
+  --color-brass: #B5945B;
+  --color-brass-deep: #8A6D3B;
+  --color-ink: #171513;
+  --color-ink-muted: #5A534A;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #0B0A09;
+    color: #F4F1EC;
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid #B5945B;
+    outline-offset: 3px;
+  }
+}
+
+/* Compositor-only Ken Burns cinema motion for full-screen 4K scenes */
+@keyframes kenBurnsSlowIn {
+  0% {
+    transform: scale(1.02) translate3d(0%, 0%, 0);
+  }
+  100% {
+    transform: scale(1.11) translate3d(-1.4%, -0.8%, 0);
+  }
+}
+
+@keyframes kenBurnsPanRight {
+  0% {
+    transform: scale(1.09) translate3d(-1.8%, 0.4%, 0);
+  }
+  100% {
+    transform: scale(1.02) translate3d(1.2%, -0.6%, 0);
+  }
+}
+
+@keyframes kenBurnsDriftUp {
+  0% {
+    transform: scale(1.04) translate3d(0.8%, 1.2%, 0);
+  }
+  100% {
+    transform: scale(1.11) translate3d(-0.8%, -1.2%, 0);
+  }
+}
+
+@keyframes kenBurnsGentleOut {
+  0% {
+    transform: scale(1.12) translate3d(1.2%, -0.5%, 0);
+  }
+  100% {
+    transform: scale(1.03) translate3d(-0.8%, 0.6%, 0);
+  }
+}
+
+.cinema-ken-1 {
+  animation: kenBurnsSlowIn 11s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.cinema-ken-2 {
+  animation: kenBurnsPanRight 11s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.cinema-ken-3 {
+  animation: kenBurnsDriftUp 11s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.cinema-ken-4 {
+  animation: kenBurnsGentleOut 11s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.cinema-paused {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinema-ken-1,
+  .cinema-ken-2,
+  .cinema-ken-3,
+  .cinema-ken-4 {
+    animation: none !important;
+    transform: scale(1.02) !important;
+  }
+}
